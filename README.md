@@ -1,6 +1,6 @@
 # laurakocsis
 
-[Green Fox Academy syllabus - junior programmer course](https://github.com/green-fox-academy/really-syllabus)
+[Green Fox Academy syllabus - junior programmer course](https://github.com/green-fox-academy/really-syllabus/wiki)
 
 [Git lesson repository](https://github.com/laurakocsis/git-lesson-repository)
 
