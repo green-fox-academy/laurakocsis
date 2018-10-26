@@ -1,5 +1,7 @@
 # laurakocsis
 
+[Green Fox Academy syllabus - junior programmer course](https://github.com/green-fox-academy/really-syllabus)
+
 [Git lesson repository](https://github.com/laurakocsis/git-lesson-repository)
 
 [Hello world - gitit practice](https://github.com/laurakocsis/hello-world)
