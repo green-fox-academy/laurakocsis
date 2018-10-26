@@ -1,0 +1,52 @@
+body {
+    background-image: url(topography.png);
+    margin: 0;
+}
+article {
+    padding: 5% 10%;
+}
+div {
+    padding: 1% 10%;
+    background-color: #333333;
+    font-size: 12px;
+    text-align: right;
+}
+a {
+    margin: 0px 10px;
+    color:#ff0099;
+}
+p {
+    text-align: center;
+}
+.wiki {
+    text-align: left;
+    font-size: 14px;
+    font-family: 'Courier New', Courier, monospace;
+}
+#intro {
+    text-align: left;
+    font-family: 'Courier New', Courier, monospace;
+    margin-bottom: 50px;
+}
+h2 {
+    text-align: center;
+    margin-top: 30px;
+}
+h1, h2, h3, h4 {
+    font-family: 'Dosis', sans-serif;
+}
+h4 {
+    font-size: 20px;
+}
+h3 {
+    color:#ff0099;
+    font-size: 25px;
+}
+h1 {
+    font-size: 40px;
+}
+img {
+    width: 26px;
+    height: 26px;
+    padding-right: 73.5%;
+}
