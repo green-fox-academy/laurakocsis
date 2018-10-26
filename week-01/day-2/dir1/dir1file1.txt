@@ -1,1 +1,2 @@
 Creating some content to file 1
+Changing the content by addig this line
