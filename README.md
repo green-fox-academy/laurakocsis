@@ -5,3 +5,5 @@
 [Hello world - gitit practice](https://github.com/laurakocsis/hello-world)
 
 [Patchwork](https://github.com/laurakocsis/patchwork)
+
+[Laura Kocsis github.io website](https://laurakocsis.github.io/)
