@@ -2,11 +2,11 @@
 export{}
 // -  Create (dynamically*) a two dimensional list
 //    with the following matrix**. Use a loop!
-//    0 1 2 3
-//   0 0 0 0 1
-//   1 0 0 1 0
-//   2 0 1 0 0
-//   3 1 0 0 0
+//    
+//    0 0 0 1
+//    0 0 1 0
+//    0 1 0 0
+//    1 0 0 0
 //
 // -  Print this two dimensional list to the console
 //
