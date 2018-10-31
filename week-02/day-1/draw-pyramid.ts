@@ -1,12 +1,12 @@
 'use strict';
 export {}
 
-let lineCount2: number = 4;
+let lineCount: number = 4;
 let star: string= "*";
 let space: string= " ";
 let addStars: string= "**";
 
-for (let i: number = 1; i <= lineCount2; i++) {
-    console.log((space.repeat(lineCount2 - i)) + star);
+for (let i: number = 0; i < lineCount; i++) {
+    console.log((space.repeat(lineCount - i)) + star);
     star = star + addStars;
 }
