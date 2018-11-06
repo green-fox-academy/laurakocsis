@@ -13,5 +13,6 @@ function replaceString (str: string): string {
   let newExample = example.replace(wordToReplace, "galaxy");
   return newExample;
 }
+example = replaceString(example)
 
-console.log(replaceString(example));
+console.log(example);
