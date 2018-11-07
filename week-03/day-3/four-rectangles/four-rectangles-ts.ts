@@ -14,6 +14,6 @@ for (let i = 0; i < rectNum; i++) {
 }
 
 function drawRect(startx, starty, x, y, color) {
-  ctx.strokeStyle = color;
-  ctx.strokeRect(startx, starty, x, y);
+  ctx.fillStyle = color;
+  ctx.fillRect(startx, starty, x, y);
 }
