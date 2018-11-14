@@ -19,3 +19,6 @@ let sharpie1 = new Sharpie('green', 99);
 sharpie1.use()
 
 console.log(sharpie1.inkAmount);
+
+export {Sharpie};
+export {sharpie1};
