@@ -24,5 +24,7 @@ class Animal {
 let tiger = new Animal();
 tiger.play();
 
-console.log(tiger.hunger);
-console.log(tiger.thirst);
+//console.log(tiger.hunger); returns 51
+//console.log(tiger.thirst); returns 51
+
+export {Animal};
