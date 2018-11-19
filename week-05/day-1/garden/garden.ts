@@ -2,8 +2,8 @@ import { Flower } from "./flower"
 import { Tree } from "./tree"
 
 export class Garden {
-  name: string;
-  plants: Flower[] | Tree[];
+  protected name: string;
+  protected plants: Flower[] | Tree[];
 
   constructor(name: string) {
     this.name = name;
@@ -17,9 +17,9 @@ export class Garden {
   plantInfo() {
     for (let i = 0; i < this.plants.length; i++) {
       if (this.plants[i].needWater()) {
-        console.log(`The ${this.plants[i].color} ${this.plants[i].constructor.name} needs water`);
+        console.log(`The ${this.plants[i].getColor()} ${this.plants[i].constructor.name} needs water`);
       } else {
-        console.log(`The ${this.plants[i].color} ${this.plants[i].constructor.name} doesn't need water`);
+        console.log(`The ${this.plants[i].getColor()} ${this.plants[i].constructor.name} doesn't need water`);
       }
     }
   }
@@ -36,16 +36,16 @@ export class Garden {
     let waterPortion = number / plantsNeedWater;
     for (let i = 0; i < this.plants.length; i++) {
       if (this.plants[i].needWater()) {
-        this.plants[i].waterAmount += waterPortion * this.plants[i].absorption;
+        this.plants[i].setWaterAmount(waterPortion * this.plants[i].getAbsorption());
         if (this.plants[i].needWater()) {
-          console.log(`The ${this.plants[i].color} ${this.plants[i].constructor.name} needs water`);
+          console.log(`The ${this.plants[i].getColor()} ${this.plants[i].constructor.name} needs water`);
         }
         else {
-          console.log(`The ${this.plants[i].color} ${this.plants[i].constructor.name} doesn't need water`);
+          console.log(`The ${this.plants[i].getColor()} ${this.plants[i].constructor.name} doesn't need water`);
         }
       }
       else {
-        console.log(`The ${this.plants[i].color} ${this.plants[i].constructor.name} doesn't need water`);
+        console.log(`The ${this.plants[i].getColor()} ${this.plants[i].constructor.name} doesn't need water`);
       }
     }
   }
