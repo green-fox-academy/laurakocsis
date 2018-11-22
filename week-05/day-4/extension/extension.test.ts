@@ -48,12 +48,12 @@ test("is vowel: k", function(t: any): any {
   t.end();
 });
 
-test('translate: bemutatkozik', function (t: any): any {
-  t.equal(translate('bemutatkozik'), 'bevemuvutavatkovozivik');
+test('translate: anyateve', function (t: any): any {
+  t.equal(translate('anyateve'), 'avanyavateveveve');
   t.end();
 });
 
-test('translate: lagopus', function (t: any): any {
-  t.equal(translate('lagopus'), 'lavagovopuvus');
+test('translate: rueppellii', function (t: any): any {
+  t.equal(translate('rueppellii'), 'ruvueveppevelliviivi');
   t.end();
 });
