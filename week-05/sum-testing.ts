@@ -24,3 +24,4 @@ let numbers3 = new Sum([9]);
 test('sum of numbers', t => {
   t.equal(numbers3.sum(), 10);
   t.end();
+});
