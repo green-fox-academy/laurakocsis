@@ -7,3 +7,10 @@ test('sum of numbers', t => {
   t.equal(numbers1.sum(), 10);
   t.end();
 });
+
+let numbers2 = new Sum([]);
+
+test('sum of numbers', t => {
+  t.equal(numbers2.sum(), 10);
+  t.end();
+});
