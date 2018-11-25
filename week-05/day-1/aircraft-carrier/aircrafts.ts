@@ -25,7 +25,7 @@ export class Aircrafts {
     return ammoNumber;
   }
 
-  getType() {
+  getType(): string {
     return this.constructor.name;
   }
 
@@ -41,15 +41,15 @@ export class Aircrafts {
     }
   }
 
-  getmaxAmmo() {
+  getmaxAmmo(): number {
     return this.maxAmmo;
   }
 
-  getbaseDamage() {
+  getbaseDamage(): number {
     return this.baseDamage;
   }
 
-  getammoStore() {
+  getammoStore(): number {
     return this.ammoStore;
   }
 }
