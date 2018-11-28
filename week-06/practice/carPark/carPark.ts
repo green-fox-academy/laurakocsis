@@ -31,4 +31,18 @@ export class CarPark {
       console.log(`There is no car in my car park with the ID: ${carId}`);
     }
   }
+
+  getOldest() {
+    if (readFromFile('cars.csv') !== null) {
+      let fileContent: string[] = readFromFile('cars.csv').split('\r\n');
+      let carData = fileContent.join(',').split(',');
+      let oldestYear: string = carData[1];
+      for (let i = 4; i < carData.length; i += 3) {
+        if ((parseInt(carData[i])) < parseInt(oldestYear)) {
+          oldestYear = carData[i];
+        }
+      }
+      return carData[carData.indexOf(oldestYear) - 1];
+    }
+  }
 }
