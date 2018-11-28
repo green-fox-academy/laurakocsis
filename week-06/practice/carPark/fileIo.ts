@@ -9,16 +9,16 @@ export function readFromFile(fileName: string) {
   }
 }
 
-export function writeToFile(fileName:string, content: string) {
-  if(fs.existsSync(fileName)) {
+export function writeToFile(fileName: string, content: string) {
+  if (fs.existsSync(fileName)) {
     fs.writeFileSync(fileName, content)
   } else {
     console.log('Cannot find file to write in');
   }
 }
 
-export function appendToFile(fileName:string, content: string) {
-  if(fs.existsSync(fileName)) {
+export function appendToFile(fileName: string, content: string) {
+  if (fs.existsSync(fileName)) {
     fs.appendFileSync(fileName, content)
   } else {
     console.log('Cannot find file to write in');
