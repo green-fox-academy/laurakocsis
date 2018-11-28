@@ -21,12 +21,14 @@ export class CarPark {
   }
 
   removeCar(carId: number): void {
-    this.carCollection.forEach((e, i) => {
-      if (e.getId() === carId) {
-        this.carCollection.splice(i, 1);
-      } else if ((this.carCollection.some(e => e.getId() === carId)) === false) {
-        console.log('There is no car in my car park with this ID');
-      }
-    })
+    if (this.carCollection.some(e => e.getId() === carId)) {
+      this.carCollection.forEach((e, i) => {
+        if (e.getId() === carId) {
+          this.carCollection.splice(i, 1);
+        }
+      })
+    } else {
+      console.log(`There is no car in my car park with the ID: ${carId}`);
+    }
   }
 }
