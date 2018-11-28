@@ -1,7 +1,7 @@
 import { Car } from './car';
 import { readFromFile, writeToFile, appendToFile } from './fileIo';
 
-class carPark {
+export class CarPark {
   private carCollection: Car[];
 
   constructor() {
@@ -16,7 +16,17 @@ class carPark {
     return this.carCollection;
   }
 
-  addCarToFile(fileName: string, newCar: Car) {
+  addCarToFile(fileName: string, newCar: Car): void {
     appendToFile(fileName, `${newCar.getLicensePlate()},${newCar.getManufactureYear()},${newCar.getParkingTicket()}\r\n`);
+  }
+
+  removeCar(carId: number): void {
+    this.carCollection.forEach((e, i) => {
+      if (e.getId() === carId) {
+        this.carCollection.splice(i, 1);
+      } else if ((this.carCollection.some(e => e.getId() === carId)) === false) {
+        console.log('There is no car in my car park with this ID');
+      }
+    })
   }
 }
