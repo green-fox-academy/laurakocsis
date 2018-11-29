@@ -32,7 +32,7 @@ export class CarPark {
     }
   }
 
-  getOldest() {
+  getOldest(): string {
     let fileContent: string = readFromFile('cars.csv');
     if (fileContent !== null) {
       let carData = fileContent.split('\r\n').join(',').split(',');
@@ -46,9 +46,9 @@ export class CarPark {
     }
   }
 
-  getPenalty() {
+  getPenalty(): string [] {
     let content: string = readFromFile('cars.csv');
-    let noTicket = [];
+    let noTicket: string[] = [];
     if (content !== null) {
       content.split('\r\n').forEach((e, i) => {
         if (e.charAt(e.length - 1) === '0') {
