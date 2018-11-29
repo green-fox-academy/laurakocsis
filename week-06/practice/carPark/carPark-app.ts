@@ -23,4 +23,6 @@ myCarPark.addCar(car5);
 
 myCarPark.removeCar(8);
 
+console.log(myCarPark.getPenalty());
+
 console.log(myCarPark.getOldest());

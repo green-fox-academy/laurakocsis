@@ -33,9 +33,9 @@ export class CarPark {
   }
 
   getOldest() {
-    if (readFromFile('cars.csv') !== null) {
-      let fileContent: string[] = readFromFile('cars.csv').split('\r\n');
-      let carData = fileContent.join(',').split(',');
+    let fileContent: string = readFromFile('cars.csv');
+    if (fileContent !== null) {
+      let carData = fileContent.split('\r\n').join(',').split(',');
       let oldestYear: string = carData[1];
       for (let i = 4; i < carData.length; i += 3) {
         if ((parseInt(carData[i])) < parseInt(oldestYear)) {
@@ -44,5 +44,18 @@ export class CarPark {
       }
       return carData[carData.indexOf(oldestYear) - 1];
     }
+  }
+
+  getPenalty() {
+    let content: string = readFromFile('cars.csv');
+    let noTicket = [];
+    if (content !== null) {
+      content.split('\r\n').forEach((e, i) => {
+        if (e.charAt(e.length - 1) === '0') {
+          noTicket.push(e);
+        }
+      })
+    }
+    return noTicket;
   }
 }
