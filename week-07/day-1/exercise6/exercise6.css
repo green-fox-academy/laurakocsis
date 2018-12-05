@@ -63,13 +63,15 @@ body, html {
   width: 100%;
   background-color: #ffd62a;
   flex-direction: column;
+  justify-content: space-around;
 }
 
 .sidebar {
   display: flex;
   height: 100%;
-  width: 200px;
+  width: 250px;
   background-color: #51d400;
+  flex-direction: column;
 }
 
 .boxes {
@@ -99,6 +101,38 @@ body, html {
   background-color: #fe0000;
 }
 
-.phar1 {
+.par1, .par2, .par3, .par4 {
+  font-size: 15px;
   margin: 2% 0;
+  text-align: justify;
+  padding: 2%;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  overflow: hidden;
+}
+
+.par2 {
+  column-count: 2;
+  column-gap: 5%;
+}
+
+.list {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  width: 100%;
+  height: 40%;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.elem {
+  background-color: #81007f;
+  width: 90%;
+  height: 13%;
+}
+
+.par3, .par4 {
+  padding: 5%;
 }
