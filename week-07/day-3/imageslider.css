@@ -56,4 +56,5 @@ body, html {
   width: 10%;
   border-radius: 8px;
   box-shadow: 8px -8px 10px #411c1c;
+  object-fit: cover;
 }
