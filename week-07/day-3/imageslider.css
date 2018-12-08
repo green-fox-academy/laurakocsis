@@ -67,6 +67,8 @@ body, html {
   flex-direction: column;
   position: absolute;
   align-self: flex-end;
+  justify-content: space-around;
+  overflow: hidden;
   height: 30%;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.507);
@@ -75,4 +77,11 @@ body, html {
 #title, #story {
   padding: 0;
   margin: 1%;
+  color: #c3bdba;
+  font-family: 'Josefin Sans', sans-serif;
+  text-shadow: 3px 3px 2px black;
+}
+
+#story {
+  font-size: 16px;
 }
