@@ -1,14 +1,14 @@
 body, html {
   padding: 0;
   margin: 0;
-  background: linear-gradient(#ffc276, #9d540e);
-  box-shadow: inset 20px 20px 200px #391607;
 }
 
 .container {
+  background: linear-gradient(#ffc276, #9d540e);
+  box-shadow: inset 20px 20px 200px #391607;
   display: flex;
   flex-direction: column;
-  width: 1350px;
+  width: 1366px;
   height: 657px;
   flex-grow: 1;
   flex-shrink: 1;
@@ -24,6 +24,7 @@ body, html {
 
 .viewer {
   display: flex;
+  position: relative;
   height: 100%;
   width: 100%;
 }
@@ -59,4 +60,13 @@ body, html {
   border-radius: 8px;
   box-shadow: 8px -8px 10px #391607;
   object-fit: cover;
+}
+
+.description {
+  display: flex;
+  position: absolute;
+  align-self: flex-end;
+  height: 30%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.507);
 }

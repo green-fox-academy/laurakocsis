@@ -46,8 +46,11 @@ const mainImage = document.querySelector('.imageslider');
 const leftArrow = document.querySelector('button.left');
 const rightArrow = document.querySelector('button.right');
 let counter = 0;
+const title = document.querySelector('#title');
+const story = document.querySelector('#story');
 
 mainImage.setAttribute('src', images[0].src);
+title.textContent = images[0].title;
 
 for (let i = 0; i < images.length; i++) {
   const smallImg = document.createElement('img');
@@ -61,9 +64,11 @@ leftArrow.onclick = () => {
   if (counter === 0) {
     counter = images.length - 1;
     mainImage.setAttribute('src', images[counter].src);
+    title.textContent = images[counter].title;
   } else {
     counter--;
     mainImage.setAttribute('src', images[counter].src);
+    title.textContent = images[counter].title;
   }
 }
 
@@ -71,14 +76,18 @@ rightArrow.onclick = () => {
   if (counter === images.length - 1) {
     counter = 0;
     mainImage.setAttribute('src', images[counter].src);
+    title.textContent = images[counter].title;
   } else {
     counter++;
     mainImage.setAttribute('src', images[counter].src);
+    title.textContent = images[counter].title;
   }
 }
 
-buttons.forEach(e => {
+buttons.forEach((e, i) => {
   e.onclick = () => {
     mainImage.setAttribute('src', e.getAttribute('src'));
+    counter = i;
+    title.textContent = images[counter].title;
   }
 });
