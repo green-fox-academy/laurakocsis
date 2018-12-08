@@ -64,9 +64,15 @@ body, html {
 
 .description {
   display: flex;
+  flex-direction: column;
   position: absolute;
   align-self: flex-end;
   height: 30%;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.507);
+}
+
+#title, #story {
+  padding: 0;
+  margin: 1%;
 }
