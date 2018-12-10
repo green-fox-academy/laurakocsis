@@ -11,7 +11,6 @@ export class Cards {
         cardList.push(this.suit[i] + this.value[j]);
       }
     }
-    console.log(cardList);
     for (let k = 0; k < 5; k++) {
       let randomCardIndex = Math.floor(Math.random() * cardList.length);
       this.white.push(cardList[randomCardIndex]);
