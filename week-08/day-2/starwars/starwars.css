@@ -1,0 +1,13 @@
+#main {
+  display: flex;
+  background-color: bisque;
+  height: 400px;
+  width: 700px;
+  margin: 2% 0;
+}
+
+#characters, #films {
+  display: flex;
+  width: 50%;
+  flex-direction: column;
+}
