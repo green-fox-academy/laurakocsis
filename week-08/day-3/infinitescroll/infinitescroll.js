@@ -15,7 +15,7 @@ body.addEventListener('click', () => {
   console.log(body.offsetHeight - window.innerHeight);
 });
 
-body.addEventListener('click', () => {
+window.addEventListener('scroll', () => {
   if ((body.offsetHeight - window.innerHeight) === window.scrollY) {
     console.log("hello");
     for (let j = 0; j < 10; j++) {
