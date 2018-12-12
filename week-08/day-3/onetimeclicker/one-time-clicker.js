@@ -8,3 +8,9 @@ button.addEventListener('click', e => {
   }
 });
 
+button.addEventListener('click', e => {
+  {
+    console.log(e.timeStamp);
+    button.setAttribute('disabled', true);
+  }
+});
