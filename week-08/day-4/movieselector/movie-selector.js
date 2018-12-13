@@ -3,8 +3,9 @@ let selectedMovie = "";
 const genre = document.querySelector('.genre');
 const movie = document.querySelector('.movie');
 const movies = document.querySelectorAll('.movie option');
+const info = document.querySelector('#result');
 
-console.log(movies);
+console.log(info);
 
 const form = document.querySelector('#mainform');
 
@@ -16,4 +17,9 @@ form.addEventListener('change', (e) => {
       el.removeAttribute('hidden');
     }
   });
+});
+
+movie.addEventListener('change', (e) => {
+  selectedMovie = e.target.value;
+  info.textContent = `The selected movie is: ${selectedMovie}`;
 });
