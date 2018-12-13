@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Button Disable</title>
+  <link rel="stylesheet" type="text/css" media="screen" href="button-disable.css" />
+</head>
+
+<body>
+  <div class='container'>
+    <form class='loveanimals' action='button-disable.html' method="GET">
+      <div class='favourite'>
+        <p class='favouritequestion'>What is your favourite pet?</p>
+        <div>
+          <input value='dog' id='dog' name='animal' type="radio">
+          <label for='dog'>Dog</label>
+        </div>
+        <div>
+          <input value='cat' id='cat' name='animal' type="radio">
+          <label for='cat'>Cat</label>
+        </div>
+        <div>
+          <input value='goldfish' id='goldfish' name='animal' type="radio">
+          <label for='goldfish'>Viktor the goldfish</label>
+        </div>
+      </div>
+      <div>
+        <div class='signup'>
+          <p class='favouritequestion'>Do you want to sign up for cat facts?</p>
+          <div>
+            <input value='yes' id='yes' name='signup' type="radio">
+            <label for='dog'>Yes</label>
+          </div>
+          <div>
+            <input value='no' id='no' name='signup' type="radio">
+            <label for='cat'>No</label>
+          </div>
+        </div>
+      </div>
+      <div class='buttons'>
+        <button id='loveCatbtn' disabled>I love cats</button>
+        <button id='signUpbtn' disabled>Sign up</button>
+      </div>
+    </form>
+  </div>
+  <script src="button-disable.js" defer async></script>
+</body>
+
+</html>
