@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Movie Selector</title>
+  <link rel="stylesheet" type="text/css" media="screen" href="movie-selector.css" />
+</head>
+
+<body>
+  <div class='conatiner'>
+    <h1>Movie Selector</h1>
+    <form id='mainform' action="movie-selector.html" method="GET">
+      <select class='genre'>
+        <option value="" disabled selected>Select a genre</option>
+        <option value='scifi'>Sci-fi</option>
+        <option value='drama'>Drama</option>
+        <option value='comedy'>Comedy</option>
+      </select>
+      <select class='movie'>
+        <option value="" disabled selected>Select a movie</option>
+        <option class='scifi' value='moon'>Moon</option>
+        <option class='scifi' value='space'>2001 Space odessy</option>
+        <option class='scifi' value='contact'>Contact</option>
+        <option class='drama' value='darkesthour'>Darkest hour</option>
+        <option class='drama' value='blood'>There will be blood</option>
+        <option class='drama' value='beauty'>American beauty</option>
+        <option class='comedy' value='airplane'>Airplane!</option>
+        <option class='comedy' value='deadpool'>Deadpool</option>
+        <option class='comedy' value='wayne'>Wayne's World</option>
+      </select>
+      <h3 id='result'>The selected movie is: -</h3>
+    </form>
+  </div>
+  <script src="movie-selector.js" defer async></script>
+</body>
+
+</html>
