@@ -9,7 +9,7 @@ console.log(info);
 
 const form = document.querySelector('#mainform');
 
-form.addEventListener('change', (e) => {
+genre.addEventListener('change', (e) => {
   movies.forEach(el => {
     if (el.className !== e.target.value) {
       el.setAttribute('hidden', 'true');
