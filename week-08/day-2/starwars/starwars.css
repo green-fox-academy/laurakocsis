@@ -1,13 +1,36 @@
 #main {
   display: flex;
-  background-color: bisque;
+  background-color: rgba(255, 228, 196, 0.664);
   height: 400px;
-  width: 700px;
-  margin: 2% 0;
+  width: 80%;
+  margin: 5% auto;
+  padding: 0 5%;
+  border: 2px solid rgb(112, 112, 224);
+  border-radius: 30px;
+  box-shadow: 5px 5px 10px white;
 }
 
 #characters, #films {
   display: flex;
   width: 50%;
   flex-direction: column;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  margin: 10px auto;
+  width: 700px;
+  height: 500px;
+}
+
+.content h1{
+  text-shadow: 2px 2px rgb(112, 112, 224);
+  color: white;
+}
+
+body {
+  background-image: url('https://starwarsblog.starwars.com/wp-content/uploads/2015/10/Seastrom_HeaderPhoto-2400x1200-900792609620.jpg');
+  background-size: 100%;
 }
