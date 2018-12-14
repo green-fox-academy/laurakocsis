@@ -13,11 +13,6 @@ function createBoxes() {
 
 createBoxes();
 
-body.addEventListener('click', () => {
-  console.log(window.scrollY);
-  console.log(body.offsetHeight - window.innerHeight);
-});
-
 window.addEventListener('scroll', () => {
   if ((body.offsetHeight - window.innerHeight) === window.scrollY) {
     createBoxes();
