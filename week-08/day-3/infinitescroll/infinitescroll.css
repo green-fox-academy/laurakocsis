@@ -14,8 +14,10 @@ body {
 
 .box img {
   width: inherit;
-  height: inherit;
+  height: 195px;
   transition: 1s;
+  margin: 0;
+  padding: 0;
 }
 
 .box img:hover {
