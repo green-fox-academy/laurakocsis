@@ -3,9 +3,22 @@ body {
   flex-direction: column;
   align-items: center;
   margin: 0;
+  background-image: url(https://media0.giphy.com/media/Yvx5ejoI6JqzC/giphy.gif?cid=3640f6095c1378a4314e416a36f8c743);
+  background-size: 50%;
 }
 
-body .box {
+.box {
   height: 200px;
   width: 200px;
+}
+
+.box img {
+  width: inherit;
+  height: inherit;
+  transition: 1s;
+}
+
+.box img:hover {
+  cursor: pointer;
+  transform: rotate(360deg);
 }
