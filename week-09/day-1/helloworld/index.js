@@ -10,6 +10,8 @@ app.get('/', (req, res) => {
   // render `home.ejs`
   res.render('home', {
     title: 'Hello World',
+    par: 'It is Monday!',
+    para: 'How wonderful!'
   });
 });
 
