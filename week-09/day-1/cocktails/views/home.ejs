@@ -20,21 +20,21 @@
   <table>
     <thead>
       <tr>
-        <th>Name </th>
-        <th>Price </th>
+        <th>NAME </th>
+        <th>PRICE </th>
       </tr>
     </thead>
     <tbody>
       <% cocktails.forEach(e => { %>
       <tr>
-        <td>
+        <td class='alcohol'>
           <%= e.name %>
           <% if(!e.isAlcoholic) {%>
           (non-alcoholic)
           <% }%>
           <p> <%= e.contains %></p>
         </td>
-        <td>
+        <td class='price'>
           <%= e.price %>
         </td>
         <% }); %>
