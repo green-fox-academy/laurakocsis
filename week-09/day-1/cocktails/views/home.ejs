@@ -29,6 +29,10 @@
       <tr>
         <td>
           <%= e.name %>
+          <% if(!e.isAlcoholic) {%>
+          (non-alcoholic)
+          <% }%>
+          <p> <%= e.contains %></p>
         </td>
         <td>
           <%= e.price %>
