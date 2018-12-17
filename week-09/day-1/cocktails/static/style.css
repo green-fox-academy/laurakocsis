@@ -1,0 +1,33 @@
+#alcohollist a {
+  margin: 10px;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+table, th, td {
+  border: 2px solid white;
+}
+
+th {
+  height: 50px;
+}
+
+.price {
+  text-align: center;
+}
+
+thead {
+  font-size: 25px;
+  background-color: black;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: #eeeeee;
+}
+
+thead tr th {
+  width: 80px;
+}
