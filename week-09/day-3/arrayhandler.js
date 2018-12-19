@@ -43,6 +43,10 @@ app.post('/arrays', (req, res) => {
     res.json({
       result: double(req.body.numbers)
     });
+  } else {
+    res.json({
+      error: 'Please provide what to do with the numbers!'
+    });
   }
 });
 
