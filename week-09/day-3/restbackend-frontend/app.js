@@ -1,10 +1,13 @@
 const express = require('express');
 const path = require('path');
+const bp = require('body-parser');
 
 const app = express();
 const PORT = 8080;
 
 app.use('/assets', express.static('assets'));
+app.use(bp());
+
 
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));;
@@ -46,6 +49,39 @@ app.get('/appenda/:appendable?', (req, res) => {
     });
   } else {
     res.status(404).send();
+  }
+});
+
+function sum(number) {
+  let startNum = 0;
+  for (let i = 0; i < number; i++) {
+    startNum += i + 1;
+  }
+  return startNum;
+}
+
+function factorial(num) {
+  if (num === 0 || num === 1) {
+    return num;
+  } else {
+    return num * factorial(num - 1);
+  }
+}
+
+app.post('/dountil/:action', (req, res) => {
+  const { action } = req.params;
+  if (action == 'sum') {
+    res.json({
+      'result': sum(req.body.until)
+    });
+  } else if (action == 'factor') {
+    res.json({
+      'result': factorial(req.body.until)
+    });
+  } else if (req.body.until == undefined) {
+    res.json({
+      "error": "Please provide a number!"
+    });
   }
 });
 
