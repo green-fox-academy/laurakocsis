@@ -10,8 +10,8 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'index.html'));;
 });
 
-app.get('/:doubling', (req, res) => {
-  if (req.params = 'doubling' && req.query.input) {
+app.get('/doubling', (req, res) => {
+  if (req.query.input) {
     res.json({
       "received": req.query.input,
       "result": 2 * req.query.input
@@ -21,6 +21,6 @@ app.get('/:doubling', (req, res) => {
       "error": "Please provide an input!"
     })
   }
-})
+});
 
 app.listen(PORT);
