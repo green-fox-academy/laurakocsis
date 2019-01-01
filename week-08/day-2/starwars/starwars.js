@@ -18,28 +18,32 @@ filmRequest.send();
 const nameListing = (array) => {
   array.forEach(e => {
     if (e.name.toLowerCase().includes(searchField.value.toLowerCase())) {
-      const a = document.createElement('a');
-      a.textContent = e.name;
-      a.setAttribute('class', 'charName');
-      names.appendChild(a);
+      const p = document.createElement('p');
+      p.textContent = e.name;
+      p.setAttribute('class', 'charName');
+      names.appendChild(p);
     }
   });
 }
 
-searchBtn.addEventListener('click', () => {
-  let morePagesAvailable = true;
-  let pageNumber = 9;
+const requestResults = (url, pageNumber) => {
   const characterRequest = new XMLHttpRequest();
   characterRequest.onload = () => {
     if (characterRequest.status === 200) {
       const responseChar = JSON.parse(characterRequest.responseText);
       nameListing(responseChar.results);
-      pageNumber++;
-      if (responseChar.next === null) {
-        morePagesAvailable = false;
-      }
+      requestResults(url, pageNumber + 1);
+    } else {
+      return;
     }
   }
-  characterRequest.open('GET', `https://swapi.co/api/people/?page=${pageNumber}`);
+  characterRequest.open('GET', `${url}${pageNumber}`);
   characterRequest.send();
+}
+
+searchBtn.addEventListener('click', () => {
+  while (names.lastChild.id !== 'names') {
+    names.removeChild(names.lastChild);
+}
+  requestResults('https://swapi.co/api/people/?page=', 1);
 });
