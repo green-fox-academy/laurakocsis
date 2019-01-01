@@ -14,6 +14,7 @@
   display: flex;
   width: 50%;
   flex-direction: column;
+  letter-spacing: 0.1em;
 }
 
 #characters {
@@ -48,15 +49,24 @@
 .content h1{
   text-shadow: 2px 2px rgb(112, 112, 224);
   color: white;
+  font-size: 40px;
+  
+}
+
+h3 {
+  font-size: 22px;
 }
 
 body {
   background-image: url('https://starwarsblog.starwars.com/wp-content/uploads/2015/10/Seastrom_HeaderPhoto-2400x1200-900792609620.jpg');
   background-size: 100%;
+  font-family: 'Neucha', cursive;
+  letter-spacing: 0.3em;
 }
 
 .charName {
   margin: 3px;
+  font-weight: 500;
 }
 
 .charName:hover {
@@ -82,6 +92,5 @@ button {
   background:#ccc; 
   cursor: pointer;
   border-radius: 7px;
-  font-family: 'Times New Roman', Times, serif;
   font-size: 16px; 
 }
