@@ -64,7 +64,7 @@ body {
   letter-spacing: 0.3em;
 }
 
-.charName {
+.charName, .movie {
   margin: 3px;
   font-weight: 500;
 }
@@ -74,6 +74,11 @@ body {
   font-style: oblique;
   font-weight: bold;
   background-color: rgba(245, 245, 220, 0.472);
+}
+
+.charName:active {
+  color: rgb(197, 197, 197);
+  background-color: rgba(175, 175, 175, 0.63);
 }
 
 input[type=text] {
