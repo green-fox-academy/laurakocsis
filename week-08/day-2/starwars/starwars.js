@@ -2,6 +2,8 @@ const filmRequest = new XMLHttpRequest();
 const searchBtn = document.querySelector('button');
 const searchField = document.querySelector('#interactive');
 const names = document.querySelector('#characters');
+const characters = document.querySelectorAll('.charName');
+const people = [];
 
 filmRequest.onreadystatechange = () => {
   if (filmRequest.readyState === XMLHttpRequest.DONE) {
@@ -17,6 +19,7 @@ filmRequest.send();
 
 const nameListing = (array) => {
   array.forEach(e => {
+    people.push([e.name, e.url]);
     if (e.name.toLowerCase().includes(searchField.value.toLowerCase())) {
       const p = document.createElement('p');
       p.textContent = e.name;
@@ -44,6 +47,6 @@ const requestResults = (url, pageNumber) => {
 searchBtn.addEventListener('click', () => {
   while (names.lastChild.id !== 'names') {
     names.removeChild(names.lastChild);
-}
+  }
   requestResults('https://swapi.co/api/people/?page=', 1);
 });
