@@ -1,22 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>Bookstore</title>
 </head>
+
 <body>
   <h1>Bookstore</h1>
   <div>
     <form class='filterForm' method='GET'>
       <div>
         <label for='categoryfilter'>Category</label>
-        <input id='categoryfilter' type='text' name='category'>
+        <select id='categoryfilter' name='category'></select>
         <label for='publisherfilter'>Publisher</label>
-        <input id='publisherfilter' type='text' name='publisher'>
-        <label for='lowpricefilter'>Category</label>
-        <input id='lowpricefilter' type='text' name='plt'>
-        <label for='greatpricefilter'>Category</label>
-        <input id='greatpricefilter' type='text' name='pgt'>
+        <select id='publisherfilter' name='publisher'></select>
+        <label for='pricerange'>Price range (45 - 250)</label>
+        <input type='range' name='pricerange' id='pricerange' min='45' max='250' value='250'>
       </div>
 
     </form>
@@ -26,4 +26,5 @@
   </div>
   <script src="/assets/frontend.js" default async></script>
 </body>
+
 </html>
