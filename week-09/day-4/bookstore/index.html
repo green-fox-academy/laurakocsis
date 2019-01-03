@@ -12,9 +12,13 @@
     <form class='filterForm' method='GET'>
       <div>
         <label for='categoryfilter'>Category</label>
-        <select id='categoryfilter' name='category'></select>
+        <select id='categoryfilter' name='category'>
+          <option value='default' disabled selected>Choose a category</option>
+        </select>
         <label for='publisherfilter'>Publisher</label>
-        <select id='publisherfilter' name='publisher'></select>
+        <select id='publisherfilter' name='publisher'>
+          <option value='default' disabled selected>Choose a publisher</option>
+        </select>
         <label for='pricerange'>Price range (45 - 250)</label>
         <input type='range' name='pricerange' id='pricerange' min='45' max='250' value='250'>
       </div>
