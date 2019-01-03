@@ -4,6 +4,7 @@ xhr.onload = () => {
   if (xhr.status === 200) {
     const response = JSON.parse(xhr.responseText);
     bookData(response);
+    createFilters(response);
   }
 }
 xhr.send();
@@ -45,5 +46,31 @@ const bookData = (data) => {
     trRow.appendChild(tdPublisher);
     trRow.appendChild(tdPrice);
     books.appendChild(trRow);
+  });
+}
+
+const categoryList = [];
+const publisherList = [];
+const categoryfilter = document.querySelector('#categoryfilter');
+const publisherfilter = document.querySelector('#publisherfilter');
+
+const createFilters = (data) => {
+  data.forEach(e => {
+    if (!categoryList.includes(e.cate_descrip)) {
+      categoryList.push(e.cate_descrip);
+    }
+    if (!publisherList.includes(e.pub_name)) {
+      publisherList.push(e.pub_name);
+    }
+  });
+  addOptions(categoryfilter, categoryList);
+  addOptions(publisherfilter, publisherList);
+}
+
+const addOptions = (htmlElement, filterArray) => {
+  filterArray.forEach(e => {
+    const option = document.createElement('option');
+    option.textContent = e;
+    htmlElement.appendChild(option);
   });
 }
