@@ -125,3 +125,12 @@ publisherfilter.addEventListener('change', (e) => {
     }
   }
 });
+
+const pricerange = document.querySelector('#pricerange');
+
+
+pricerange.addEventListener('change', (e) => {
+  const pricelabel = document.querySelector('#pricelabel');
+  const { valueAsNumber } = e.target;
+  pricelabel.textContent = `Price range (45 - ${valueAsNumber})`;
+});
