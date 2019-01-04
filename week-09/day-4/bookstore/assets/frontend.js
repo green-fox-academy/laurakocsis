@@ -94,3 +94,14 @@ categoryfilter.addEventListener('change', (e) => {
     newxhrRequest(method, url.concat(`?category=${value}`), bookData);
   }
 });
+
+publisherfilter.addEventListener('change', (e) => {
+  const { value } = e.target;
+  if (value === 'All') {
+    books.innerHTML = '';
+    newxhrRequest(method, url, bookData);
+  } else {
+    books.innerHTML = '';
+    newxhrRequest(method, url.concat(`?publisher=${value}`), bookData);
+  }
+});
