@@ -1,13 +1,16 @@
-const xhr = new XMLHttpRequest();
-xhr.open('GET', '/books');
-xhr.onload = () => {
-  if (xhr.status === 200) {
-    const response = JSON.parse(xhr.responseText);
-    bookData(response);
-    createFilters(response);
+const method = 'GET';
+const url = '/books';
+
+const newxhrRequest = (method, url, callback) => {
+  const xhr = new XMLHttpRequest();
+  xhr.onload = () => {
+    if (xhr.status === 200) {
+      callback(JSON.parse(xhr.responseText));
+    }
   }
+  xhr.open(method, url);
+  xhr.send();
 }
-xhr.send();
 
 const bookData = (data) => {
   const books = document.querySelector('.bookTable');
@@ -74,3 +77,11 @@ const addOptions = (htmlElement, filterArray) => {
     htmlElement.appendChild(option);
   });
 }
+
+newxhrRequest(method, url, bookData);
+newxhrRequest(method, url, createFilters);
+
+categoryfilter.addEventListener('change', (e) => {
+  const { value } = e.target;
+  console.log(value);
+})
