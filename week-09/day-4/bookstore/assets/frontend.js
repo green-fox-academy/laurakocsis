@@ -86,6 +86,11 @@ newxhrRequest(method, url, createFilters);
 
 categoryfilter.addEventListener('change', (e) => {
   const { value } = e.target;
-  books.innerHTML = '';
-  newxhrRequest(method, url.concat(`?category=${value}`), bookData);
+  if (value === 'All') {
+    books.innerHTML = '';
+    newxhrRequest(method, url, bookData);
+  } else {
+    books.innerHTML = '';
+    newxhrRequest(method, url.concat(`?category=${value}`), bookData);
+  }
 });
