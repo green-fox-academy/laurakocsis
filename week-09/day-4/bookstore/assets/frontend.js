@@ -97,11 +97,21 @@ categoryfilter.addEventListener('change', (e) => {
 
 publisherfilter.addEventListener('change', (e) => {
   const { value } = e.target;
-  if (value === 'All') {
-    books.innerHTML = '';
-    newxhrRequest(method, url, bookData);
+  if (categoryfilter.value !== 'default' && categoryfilter.value !== 'All') {
+    if (value === 'All') {
+      books.innerHTML = '';
+      newxhrRequest(method, url.concat(`?category=${categoryfilter.value}`), bookData);
+    } else {
+      books.innerHTML = '';
+      newxhrRequest(method, url.concat(`?publisher=${value}&category=${categoryfilter.value}`), bookData);
+    }
   } else {
-    books.innerHTML = '';
-    newxhrRequest(method, url.concat(`?publisher=${value}`), bookData);
+    if (value === 'All') {
+      books.innerHTML = '';
+      newxhrRequest(method, url, bookData);
+    } else {
+      books.innerHTML = '';
+      newxhrRequest(method, url.concat(`?publisher=${value}`), bookData);
+    }
   }
 });
