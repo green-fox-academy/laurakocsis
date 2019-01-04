@@ -54,6 +54,19 @@ app.get('/books', (req, res) => {
       res.json(data);
     });
   }
+  if (!req.query.category && req.query.publisher) {
+    const sqlPublisher = sql.slice(0, sql.length - 1).concat(`WHERE p.pub_name = '${req.query.publisher}';`);
+    conn.query(sqlPublisher, (err, data) => {
+      if (err) {
+        console.log(err.message);
+        res.status(500).json({
+          error: 'Internal server error'
+        });
+        return;
+      }
+      res.json(data);
+    });
+  }
 });
 
 
