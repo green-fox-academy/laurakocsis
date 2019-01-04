@@ -71,6 +71,9 @@ const createFilters = (data) => {
 }
 
 const addOptions = (htmlElement, filterArray) => {
+  const all = document.createElement('option');
+  all.textContent = 'All';
+  htmlElement.appendChild(all);
   filterArray.forEach(e => {
     const option = document.createElement('option');
     option.textContent = e;
