@@ -12,8 +12,8 @@ const newxhrRequest = (method, url, callback) => {
   xhr.send();
 }
 
+const books = document.querySelector('.bookTable');
 const bookData = (data) => {
-  const books = document.querySelector('.bookTable');
   const tr = document.createElement('tr');
   const thTitle = document.createElement('th');
   const thAuthor = document.createElement('th');
@@ -83,5 +83,6 @@ newxhrRequest(method, url, createFilters);
 
 categoryfilter.addEventListener('change', (e) => {
   const { value } = e.target;
-  console.log(value);
-})
+  books.innerHTML = '';
+  newxhrRequest(method, url.concat(`?category=${value}`), bookData);
+});
