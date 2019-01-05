@@ -94,12 +94,14 @@ categoryfilter.addEventListener('change', (e) => {
     if (publisherfilter.value !== 'default' && publisherfilter.value !== 'All') {
 
       if (value === 'All') {
+
         books.innerHTML = '';
         newxhrRequest(method, url.concat(`?publisher=${publisherfilter.value}&price=${pricerange.valueAsNumber}`), bookData);
       } else {
         books.innerHTML = '';
         newxhrRequest(method, url.concat(`?publisher=${publisherfilter.value}&category=${value}&price=${pricerange.valueAsNumber}`), bookData);
       }
+
     } else {
 
       if (value === 'All') {
@@ -123,6 +125,7 @@ categoryfilter.addEventListener('change', (e) => {
         books.innerHTML = '';
         newxhrRequest(method, url.concat(`?publisher=${publisherfilter.value}&category=${value}`), bookData);
       }
+
     } else {
 
       if (value === 'All') {
@@ -137,22 +140,53 @@ categoryfilter.addEventListener('change', (e) => {
 });
 
 publisherfilter.addEventListener('change', (e) => {
+
   const { value } = e.target;
-  if (categoryfilter.value !== 'default' && categoryfilter.value !== 'All') {
-    if (value === 'All') {
-      books.innerHTML = '';
-      newxhrRequest(method, url.concat(`?category=${categoryfilter.value}`), bookData);
+
+  if (pricerange.valueAsNumber !== 250) {
+
+    if (categoryfilter.value !== 'default' && categoryfilter.value !== 'All') {
+
+      if (value === 'All') {
+        books.innerHTML = '';
+        newxhrRequest(method, url.concat(`?category=${categoryfilter.value}&price=${pricerange.valueAsNumber}`), bookData);
+      } else {
+        books.innerHTML = '';
+        newxhrRequest(method, url.concat(`?publisher=${value}&category=${categoryfilter.value}&price=${pricerange.valueAsNumber}`), bookData);
+      }
+
     } else {
-      books.innerHTML = '';
-      newxhrRequest(method, url.concat(`?publisher=${value}&category=${categoryfilter.value}`), bookData);
+
+      if (value === 'All') {
+        books.innerHTML = '';
+        newxhrRequest(method, url.concat(`?price=${pricerange.valueAsNumber}`), bookData);
+      } else {
+        books.innerHTML = '';
+        newxhrRequest(method, url.concat(`?publisher=${value}&price=${pricerange.valueAsNumber}`), bookData);
+      }
     }
+
   } else {
-    if (value === 'All') {
-      books.innerHTML = '';
-      newxhrRequest(method, url, bookData);
+
+    if (categoryfilter.value !== 'default' && categoryfilter.value !== 'All') {
+
+      if (value === 'All') {
+        books.innerHTML = '';
+        newxhrRequest(method, url.concat(`?category=${categoryfilter.value}`), bookData);
+      } else {
+        books.innerHTML = '';
+        newxhrRequest(method, url.concat(`?publisher=${value}&category=${categoryfilter.value}`), bookData);
+      }
+
     } else {
-      books.innerHTML = '';
-      newxhrRequest(method, url.concat(`?publisher=${value}`), bookData);
+
+      if (value === 'All') {
+        books.innerHTML = '';
+        newxhrRequest(method, url, bookData);
+      } else {
+        books.innerHTML = '';
+        newxhrRequest(method, url.concat(`?publisher=${value}`), bookData);
+      }
     }
   }
 });
