@@ -86,22 +86,52 @@ newxhrRequest(method, url, bookData);
 newxhrRequest(method, url, createFilters);
 
 categoryfilter.addEventListener('change', (e) => {
+
   const { value } = e.target;
-  if (publisherfilter.value !== 'default' && publisherfilter.value !== 'All') {
-    if (value === 'All') {
-      books.innerHTML = '';
-      newxhrRequest(method, url.concat(`?publisher=${publisherfilter.value}`), bookData);
+
+  if (pricerange.valueAsNumber !== 250) {
+
+    if (publisherfilter.value !== 'default' && publisherfilter.value !== 'All') {
+
+      if (value === 'All') {
+        books.innerHTML = '';
+        newxhrRequest(method, url.concat(`?publisher=${publisherfilter.value}&price=${pricerange.valueAsNumber}`), bookData);
+      } else {
+        books.innerHTML = '';
+        newxhrRequest(method, url.concat(`?publisher=${publisherfilter.value}&category=${value}&price=${pricerange.valueAsNumber}`), bookData);
+      }
     } else {
-      books.innerHTML = '';
-      newxhrRequest(method, url.concat(`?publisher=${publisherfilter.value}&category=${value}`), bookData);
+
+      if (value === 'All') {
+
+        books.innerHTML = '';
+        newxhrRequest(method, url.concat(`?price=${pricerange.valueAsNumber}`), bookData);
+      } else {
+        books.innerHTML = '';
+        newxhrRequest(method, url.concat(`?category=${value}&price=${pricerange.valueAsNumber}`), bookData);
+      }
     }
+
   } else {
-    if (value === 'All') {
-      books.innerHTML = '';
-      newxhrRequest(method, url, bookData);
+
+    if (publisherfilter.value !== 'default' && publisherfilter.value !== 'All') {
+
+      if (value === 'All') {
+        books.innerHTML = '';
+        newxhrRequest(method, url.concat(`?publisher=${publisherfilter.value}`), bookData);
+      } else {
+        books.innerHTML = '';
+        newxhrRequest(method, url.concat(`?publisher=${publisherfilter.value}&category=${value}`), bookData);
+      }
     } else {
-      books.innerHTML = '';
-      newxhrRequest(method, url.concat(`?category=${value}`), bookData);
+
+      if (value === 'All') {
+        books.innerHTML = '';
+        newxhrRequest(method, url, bookData);
+      } else {
+        books.innerHTML = '';
+        newxhrRequest(method, url.concat(`?category=${value}`), bookData);
+      }
     }
   }
 });
