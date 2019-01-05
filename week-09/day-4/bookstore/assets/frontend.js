@@ -56,6 +56,7 @@ const categoryList = [];
 const publisherList = [];
 const categoryfilter = document.querySelector('#categoryfilter');
 const publisherfilter = document.querySelector('#publisherfilter');
+const pricelabel = document.querySelector('#pricelabel');
 
 const createFilters = (data) => {
   data.forEach(e => {
@@ -130,7 +131,31 @@ const pricerange = document.querySelector('#pricerange');
 
 
 pricerange.addEventListener('change', (e) => {
-  const pricelabel = document.querySelector('#pricelabel');
   const { valueAsNumber } = e.target;
   pricelabel.textContent = `Price range (45 - ${valueAsNumber})`;
+
+  if ((categoryfilter.value !== 'default' && categoryfilter.value !== 'All') &&
+    (publisherfilter.value !== 'default' && publisherfilter.value !== 'All')) {
+    console.log(categoryfilter.value);
+    console.log(publisherfilter.value);
+    books.innerHTML = '';
+    newxhrRequest(method, url.concat(`?publisher=${publisherfilter.value}&category=${categoryfilter.value}&price=${valueAsNumber}`), bookData);
+
+  } else if ((categoryfilter.value === 'default' || categoryfilter.value === 'All') &&
+    (publisherfilter.value !== 'default' && publisherfilter.value !== 'All')) {
+
+    books.innerHTML = '';
+    newxhrRequest(method, url.concat(`?publisher=${publisherfilter.value}&price=${valueAsNumber}`), bookData);
+
+  } else if ((categoryfilter.value !== 'default' && categoryfilter.value !== 'All') &&
+    (publisherfilter.value === 'default' || publisherfilter.value === 'All')) {
+
+    books.innerHTML = '';
+    newxhrRequest(method, url.concat(`?category=${categoryfilter.value}&price=${valueAsNumber}`), bookData);
+
+  } else {
+
+    books.innerHTML = '';
+    newxhrRequest(method, url.concat(`?price=${valueAsNumber}`), bookData);
+  }
 });
