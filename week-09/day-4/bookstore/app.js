@@ -43,23 +43,48 @@ app.get('/books', (req, res) => {
   INNER JOIN category AS c on (b.cate_id = c.cate_id)
   INNER JOIN publisher AS p on (b.pub_id = p.pub_id);`;
 
-  if (!req.query.category && !req.query.publisher) {
-    connquery(sqlAll, res);
-  }
+  if (req.query.price) {
 
-  if (req.query.category && !req.query.publisher) {
-    const sqlCategory = sqlAll.slice(0, sqlAll.length - 1).concat(`WHERE c.cate_descrip = '${req.query.category}';`);
-    connquery(sqlCategory, res);
-  }
+    if (!req.query.category && !req.query.publisher) {
+      const priceFilter = sqlAll.slice(0, sqlAll.length - 1).concat(`WHERE b.book_price BETWEEN 45 AND ${req.query.price};`);
+      connquery(priceFilter, res);
+    }
 
-  if (!req.query.category && req.query.publisher) {
-    const sqlPublisher = sqlAll.slice(0, sqlAll.length - 1).concat(`WHERE p.pub_name = '${req.query.publisher}';`);
-    connquery(sqlPublisher, res);
-  }
+    if (req.query.category && !req.query.publisher) {
+      const sqlCatPrice = sqlAll.slice(0, sqlAll.length - 1).concat(`WHERE c.cate_descrip = '${req.query.category}' AND b.book_price BETWEEN 45 AND ${req.query.price};`);
+      connquery(sqlCatPrice, res);
+    }
 
-  if (req.query.category && req.query.publisher) {
-    const sqlPubCat = sqlAll.slice(0, sqlAll.length - 1).concat(`WHERE c.cate_descrip = '${req.query.category}' AND p.pub_name = '${req.query.publisher}';`);
-    connquery(sqlPubCat, res);
+    if (!req.query.category && req.query.publisher) {
+      const sqlPubPrice = sqlAll.slice(0, sqlAll.length - 1).concat(`WHERE p.pub_name = '${req.query.publisher}' AND b.book_price BETWEEN 45 AND ${req.query.price};`);
+      connquery(sqlPubPrice, res);
+    }
+
+    if (req.query.category && req.query.publisher) {
+      const sqlPubCat = sqlAll.slice(0, sqlAll.length - 1).concat(`WHERE c.cate_descrip = '${req.query.category}' AND p.pub_name = '${req.query.publisher}' AND b.book_price BETWEEN 45 AND ${req.query.price};`);
+      connquery(sqlPubCat, res);
+    }
+
+  } else {
+
+    if (!req.query.category && !req.query.publisher) {
+      connquery(sqlAll, res);
+    }
+
+    if (req.query.category && !req.query.publisher) {
+      const sqlCategory = sqlAll.slice(0, sqlAll.length - 1).concat(`WHERE c.cate_descrip = '${req.query.category}';`);
+      connquery(sqlCategory, res);
+    }
+
+    if (!req.query.category && req.query.publisher) {
+      const sqlPublisher = sqlAll.slice(0, sqlAll.length - 1).concat(`WHERE p.pub_name = '${req.query.publisher}';`);
+      connquery(sqlPublisher, res);
+    }
+
+    if (req.query.category && req.query.publisher) {
+      const sqlPubCat = sqlAll.slice(0, sqlAll.length - 1).concat(`WHERE c.cate_descrip = '${req.query.category}' AND p.pub_name = '${req.query.publisher}';`);
+      connquery(sqlPubCat, res);
+    }
   }
 });
 
