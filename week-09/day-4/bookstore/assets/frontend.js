@@ -94,7 +94,6 @@ categoryfilter.addEventListener('change', (e) => {
     if (publisherfilter.value !== 'default' && publisherfilter.value !== 'All') {
 
       if (value === 'All') {
-
         books.innerHTML = '';
         newxhrRequest(method, url.concat(`?publisher=${publisherfilter.value}&price=${pricerange.valueAsNumber}`), bookData);
       } else {
@@ -105,7 +104,6 @@ categoryfilter.addEventListener('change', (e) => {
     } else {
 
       if (value === 'All') {
-
         books.innerHTML = '';
         newxhrRequest(method, url.concat(`?price=${pricerange.valueAsNumber}`), bookData);
       } else {
@@ -200,8 +198,7 @@ pricerange.addEventListener('change', (e) => {
 
   if ((categoryfilter.value !== 'default' && categoryfilter.value !== 'All') &&
     (publisherfilter.value !== 'default' && publisherfilter.value !== 'All')) {
-    console.log(categoryfilter.value);
-    console.log(publisherfilter.value);
+      
     books.innerHTML = '';
     newxhrRequest(method, url.concat(`?publisher=${publisherfilter.value}&category=${categoryfilter.value}&price=${valueAsNumber}`), bookData);
 
