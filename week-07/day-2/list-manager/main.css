@@ -1,0 +1,28 @@
+div {
+  display: flex;
+}
+
+#functions {
+  display: flex;
+  flex-direction: column;
+  padding: 2px;
+  margin: 5px;
+  width: 100px;
+}
+
+#left, #right {
+  list-style-type: none;
+  border: 1px solid black;
+  padding: 2px;
+  margin: 5px;
+  width: 100px;
+}
+
+.leftList {
+  height: 25px;
+}
+
+.button {
+  height: 25px;
+  width: 100%;
+}
