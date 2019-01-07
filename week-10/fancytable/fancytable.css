@@ -1,3 +1,46 @@
 td[data-currency='dollar']::before {
   content: '$ ';
 }
+
+table {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+thead>tr>th {
+  border-bottom: 3px solid rgb(165, 165, 165);
+  background: #1b1e24;
+  color: rgb(219, 216, 216);
+  font-weight: 100;
+  font-size: 20px;
+}
+
+thead>tr>th:first-of-type {
+  border-right: 1px solid rgb(165, 165, 165);
+}
+
+th, td {
+  padding: 5px 10px;
+  width: 150px;
+  height: 40px;
+  text-align: left;
+}
+
+tbody>tr>td {
+  border-bottom: 1px solid rgb(165, 165, 165);
+  color: rgb(101, 101, 101);
+}
+
+tbody>tr:last-child>td {
+  border-bottom: none;
+}
+
+tbody>tr>td:first-of-type {
+  border-right: 1px solid rgb(165, 165, 165);
+}
+
+tbody>tr:nth-child(2n+1) {
+  background: #ebebeb;
+}
