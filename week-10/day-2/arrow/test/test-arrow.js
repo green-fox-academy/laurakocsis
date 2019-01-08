@@ -9,7 +9,7 @@ test('testing with distance and time query', (t) => {
     .expect('Content-type', /json/)
     .end((err, res) => {
       if (err) throw err;
-      t.same(res.body, { distance: '100', time: '10', speed: '10' }, 'testing with distance and time query');
+      t.same(res.body, { distance: 100, time: 10, speed: 10 }, 'testing with distance and time query');
       t.end();
     });
 });
