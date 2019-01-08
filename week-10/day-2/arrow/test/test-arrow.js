@@ -13,3 +13,15 @@ test('testing with distance and time query', (t) => {
       t.end();
     });
 });
+
+test('testing without distance and time query', (t) => {
+  request(app)
+    .get('/yondu')
+    .expect(400)
+    .expect('Content-type', /json/)
+    .end((err, res) => {
+      if (err) throw err;
+      t.same(res.body, { error: `Distance or time is missing` }, 'testing with distance and time query');
+      t.end();
+    });
+});
