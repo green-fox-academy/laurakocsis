@@ -5,12 +5,12 @@ app.get('/groot', (req, res) => {
   const { message } = req.query;
   if (message) {
     res.status(200).json({
-      "received": `${message}`,
-      "translated": "I am Groot!"
+      'received': `${message}`,
+      'translated': 'I am Groot!'
     });
   } else {
     res.status(400).json({
-      "error": "I am Groot!"
+      'error': 'I am Groot!'
     });
   }
 });
