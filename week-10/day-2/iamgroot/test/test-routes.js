@@ -13,3 +13,15 @@ test('groot endpoint with message query', (t) => {
     t.end();
   });
 });
+
+test('groot endpoint without message query', (t) => {
+  request(app)
+  .get('/groot')
+  .expect(400)
+  .expect('Content-type', /json/)
+  .end((err, res) => {
+    if (err) throw err;
+    t.same(res.body, {error: 'I am Groot!'}, 'testing without query');
+    t.end();
+  });
+});
