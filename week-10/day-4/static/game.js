@@ -8,6 +8,7 @@ const createQuestion = (data) => {
   question.innerText = data.question;
   options.forEach((e, i) => {
     e.innerText = data.answers[i].answer;
+    e.disabled = false;
     e.setAttribute('value', data.answers[i].is_correct);
     e.style.background = '#3498db';
   });
@@ -38,6 +39,9 @@ answer.addEventListener('click', (event) => {
     } else {
       chosenAnswer.style.background = '#ff5454';
     }
+    options.forEach(e => {
+      e.disabled = true;
+    });
     setTimeout(() => {
       questionRequest(createQuestion);
     }, 2000);
