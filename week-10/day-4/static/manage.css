@@ -34,6 +34,11 @@ a {
   margin: 30px;
 }
 
+a:active {
+  color: #77bdec;
+  text-shadow: 0px 0px 6px white;
+}
+
 .question {
   display: flex;
   justify-content: space-between;
