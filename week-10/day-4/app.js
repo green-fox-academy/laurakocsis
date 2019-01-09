@@ -68,6 +68,7 @@ app.get('/questions', (req, res) => {
 });
 
 app.post('/questions', (req, res) => {
+  console.log(req.body);
   const { question, answer1, answer2, answer3, answer4, correct } = req.body;
   conn.query('INSERT INTO questions (question) VALUES (?);', [question], (err, response) => {
     if (err) {
@@ -78,25 +79,25 @@ app.post('/questions', (req, res) => {
       return;
     }
     const newId = response.insertId;
-    let insertAnswers = '';
-    if (correct === 1) {
+    let insertAnswers;
+    if (correct === '1') {
       insertAnswers = 'INSERT INTO answers (question_id, answer, is_correct) VALUES (?, ?, 1), (?, ?, 0), (?, ?, 0), (?, ?, 0);';
-    } else if (correct === 2) {
+    } else if (correct === '2') {
       insertAnswers = 'INSERT INTO answers (question_id, answer, is_correct) VALUES (?, ?, 0), (?, ?, 1), (?, ?, 0), (?, ?, 0);';
-    } else if (correct === 3) {
+    } else if (correct === '3') {
       insertAnswers = 'INSERT INTO answers (question_id, answer, is_correct) VALUES (?, ?, 0), (?, ?, 0), (?, ?, 1), (?, ?, 0);';
-    } else if (correct === 4) {
+    } else if (correct === '4') {
       insertAnswers = 'INSERT INTO answers (question_id, answer, is_correct) VALUES (?, ?, 0), (?, ?, 0), (?, ?, 0), (?, ?, 1);';
     }
     conn.query(insertAnswers, [newId, answer1, newId, answer2, newId, answer3, newId, answer4], (e, data) => {
       if (e) {
-        console.log(e.message);
+        console.log(e);
         res.status(500).json({
           error: 'Internal server error'
         });
         return;
       }
-      res.sendStatus(200);
+      res.status(200).send();
     });
   });
 });
