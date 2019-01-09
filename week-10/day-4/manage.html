@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="./static/manage.css">
+  <title>Manage Questions</title>
+</head>
+
+<body>
+  <div>
+    <div>
+      <h1>Manage Questions</h1>
+      <div id="questions">
+        <div class="question">
+          <p>When did the...</p>
+          <p class="deletebutton">delete</p>
+        </div>
+        <div class="question">
+          <p>When did the...</p>
+          <p class="deletebutton">delete</p>
+        </div>
+      </div>
+    </div>
+    <div>
+      <h1>Create Questions</h1>
+      <div>
+        <form action="">
+          <input type="text" placeholder="Type your question here" name="newQuestion">
+          <div>
+            <h2>Answers</h2>
+            <div class="answerinput">
+              <label for="answer one">#1</label>
+              <input type="text" name="answerone" placeholder="Type your answer here" required>
+              <input type="radio" name="correctanswer" value="1" required>
+            </div>
+            <div class="answerinput">
+              <label for="answer two">#2</label>
+              <input type="text" name="answertwo" placeholder="Type your answer here" required>
+              <input type="radio" name="correctanswer" value="2" required>
+            </div>
+            <div class="answerinput">
+              <label for="answer two">#3</label>
+              <input type="text" name="answerthree" placeholder="Type your answer here" required>
+              <input type="radio" name="correctanswer" value="3" required>
+            </div>
+            <div class="answerinput">
+              <label for="answer two">#4</label>
+              <input type="text" name="answerfour" placeholder="Type your answer here" required>
+              <input type="radio" name="correctanswer" value="4" required>
+            </div>
+            <input id= "button" type="submit" value="SUBMIT">
+        </form>
+      </div>
+    </div>
+  </div>
+  <a href='https://google.com'>Go back to game</a>
+  </div>
+</body>
+
+</html>
