@@ -16,7 +16,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/manage', (req, res) => {
-  res.sendFile(path.join(__dirname, '/static/manage.html'));
+  res.sendFile(path.join(__dirname, 'manage.html'));
 });
 
 const conn = mysql.createConnection({
