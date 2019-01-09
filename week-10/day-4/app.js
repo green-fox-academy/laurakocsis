@@ -54,4 +54,17 @@ app.get('/game', (req, res) => {
   });
 });
 
+app.get('/questions', (req, res) => {
+  conn.query('SELECT * FROM questions', (err, data) => {
+    if (err) {
+      console.log(e.message);
+      res.status(500).json({
+        error: 'Internal server error'
+      });
+      return;
+    }
+    res.json(data);
+  });
+});
+
 app.listen(PORT, () => console.log(`Server is listening on port ${PORT}`));
