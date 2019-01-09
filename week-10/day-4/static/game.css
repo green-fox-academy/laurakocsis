@@ -59,7 +59,7 @@ button {
   font-size: 16px;
 }
 
-button:active {
+a:active, button:active {
   filter: brightness(120%);
 }
 
