@@ -1,3 +1,5 @@
+'use strict';
+
 const question = document.querySelector('h2');
 const score = document.querySelector('span');
 let points = 0;

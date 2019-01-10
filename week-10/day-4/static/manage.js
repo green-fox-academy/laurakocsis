@@ -1,3 +1,5 @@
+'use strict';
+
 const questions = document.querySelector('#questions');
 const form = document.querySelector('form');
 const radiobuttons = document.querySelectorAll('input[type=radio]');

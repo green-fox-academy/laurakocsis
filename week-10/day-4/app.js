@@ -6,7 +6,6 @@ const mysql = require('mysql');
 const path = require('path');
 
 const app = express();
-const PORT = 3000;
 
 app.use(express.json());
 app.use('/static', express.static('static'));
@@ -113,4 +112,4 @@ app.delete('/questions/:id', (req, res) => {
   });
 });
 
-app.listen(PORT, () => console.log(`Server is listening on port ${PORT}`));
+module.exports = app;
