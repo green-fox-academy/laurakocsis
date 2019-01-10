@@ -52,12 +52,12 @@ answer.addEventListener('click', (event) => {
           chosenAnswer.style.background = '#ff5454';
         }, 600);
       }
-      options.forEach(e => {
-        e.disabled = true;
-      });
     }, 1000);
+    options.forEach(e => {
+      e.disabled = true;
+    });
     setTimeout(() => {
       questionRequest(createQuestion);
     }, 3000);
   }
-}); 
+});
