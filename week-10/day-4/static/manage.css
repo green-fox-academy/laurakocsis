@@ -93,6 +93,7 @@ label + input {
   background: #3498db;
   border: none;
   box-shadow: inset 0px 0px 15px rgba(0, 0, 80, 0.513);
+  border-radius: 10px;
 }
 
 #button:active {
