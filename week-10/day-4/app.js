@@ -66,7 +66,6 @@ app.get('/questions', (req, res) => {
 });
 
 app.post('/questions', (req, res) => {
-  console.log(req.body);
   const { question, answer1, answer2, answer3, answer4, correct } = req.body;
   conn.query('INSERT INTO questions (question) VALUES (?);', [question], (err, response) => {
     if (err) {
