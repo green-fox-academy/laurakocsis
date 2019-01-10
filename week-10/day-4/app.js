@@ -27,7 +27,7 @@ const conn = mysql.createConnection({
 });
 
 app.get('/game', (req, res) => {
-  conn.query('SELECT * FROM questions;', (err, questions) => {
+  conn.query('SELECT * FROM questions ORDER BY RAND() LIMIT 1;', (err, questions) => {
     if (err) {
       console.log(err.message);
       res.status(500).json({
@@ -35,10 +35,8 @@ app.get('/game', (req, res) => {
       });
       return;
     }
-    const questionNumber = Math.max.apply(Math, questions.map(function (ids) { return ids.id; }));
-    const randomId = Math.floor(Math.random() * questionNumber) + 1;
-    conn.query(`SELECT * FROM answers WHERE question_id=${randomId};`, (e, answers) => {
-      if (err) {
+    conn.query(`SELECT * FROM answers WHERE question_id=${questions[0].id};`, (e, answers) => {
+      if (e) {
         console.log(e.message);
         res.status(500).json({
           error: 'Internal server error'
@@ -46,8 +44,8 @@ app.get('/game', (req, res) => {
         return;
       }
       res.json({
-        id: questions[randomId - 1].id,
-        question: questions[randomId - 1].question,
+        id: questions[0].id,
+        question: questions[0].question,
         answers: answers
       });
     });
