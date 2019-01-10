@@ -13,6 +13,7 @@ const appendQuestions = (dataArray) => {
     pQuestion.innerText = e.question;
     const pDelete = document.createElement('p');
     pDelete.setAttribute('class', 'deletebutton');
+    pDelete.setAttribute('data-id', `${e.id}`);
     pDelete.innerText = 'delete';
     questions.appendChild(div);
     div.appendChild(pQuestion);
@@ -64,4 +65,16 @@ const sendNewQuestion = () => {
 form.addEventListener('submit', (e) => {
   e.preventDefault();
   sendNewQuestion();
+});
+
+questions.addEventListener('click', (e) => {
+  console.log(e.target.getAttribute('data-id'));
+  if (e.target.className === 'deletebutton') {
+    const xhr = new XMLHttpRequest();
+    xhr.onload = () => {
+      questionsRequest(appendQuestions);
+    }
+    xhr.open('DELETE', `/questions/${e.target.getAttribute('data-id')}`);
+    xhr.send();
+  }
 });
