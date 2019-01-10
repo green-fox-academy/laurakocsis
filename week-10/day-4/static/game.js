@@ -37,8 +37,20 @@ answer.addEventListener('click', (event) => {
         chosenAnswer.style.background = '#4ac100';
         points++;
         score.innerText = points;
+        setTimeout(() => {
+          chosenAnswer.style.background = '#3498db';
+        }, 300);
+        setTimeout(() => {
+          chosenAnswer.style.background = '#4ac100';
+        }, 600);
       } else {
         chosenAnswer.style.background = '#ff5454';
+        setTimeout(() => {
+          chosenAnswer.style.background = '#3498db';
+        }, 300);
+        setTimeout(() => {
+          chosenAnswer.style.background = '#ff5454';
+        }, 600);
       }
       options.forEach(e => {
         e.disabled = true;
