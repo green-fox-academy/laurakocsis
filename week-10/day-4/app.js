@@ -102,4 +102,18 @@ app.post('/questions', (req, res) => {
   });
 });
 
+app.delete('/questions/:id', (req, res) => {
+  const { id } = req.params;
+  conn.query(`DELETE a.*, b.* FROM questions a LEFT JOIN answers b ON b.question_id = a.id WHERE a.id = ${id};`, (err, data) => {
+    if (err) {
+      console.log(err.message);
+      res.status(500).json({
+        error: 'Internal server error'
+      });
+      return;
+    }
+    res.status(204).send();
+  });
+});
+
 app.listen(PORT, () => console.log(`Server is listening on port ${PORT}`));
