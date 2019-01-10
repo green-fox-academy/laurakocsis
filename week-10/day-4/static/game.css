@@ -57,6 +57,7 @@ button {
   border: none;
   box-shadow: inset 0px 0px 15px rgba(0, 0, 80, 0.513);
   font-size: 16px;
+  border-radius: 10px;
 }
 
 a:active, button:active {
