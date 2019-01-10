@@ -49,6 +49,16 @@ a:active {
   color: red;
 }
 
+.deletebutton:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.deletebutton:active {
+  color: rgb(255, 89, 89);
+  font-style: oblique;
+}
+
 form {
   align-items: center;
 }
