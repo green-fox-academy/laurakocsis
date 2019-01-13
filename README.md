@@ -13,3 +13,7 @@
 [Repository of github.io website](https://github.com/laurakocsis/laurakocsis.github.io)
 
 [ToDo Application](https://github.com/laurakocsis/todo-app)
+
+[Wanderer Game](https://github.com/laurakocsis/wanderer-typescript)
+
+[Quiz Game](https://github.com/green-fox-academy/laurakocsis/tree/master/week-10/day-4)
